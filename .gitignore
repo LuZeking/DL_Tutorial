@@ -1,4 +1,12 @@
 /my_tf_pipline/model_saved
 /my_tf_pipline/results_saved
+
 /my_pytorch_pipline/model_saved
 /my_pytorch_pipline/results_saved
+
+/my_tf_pipline/data  
+/my_tf_pipline/results
+/my_tf_pipline/model_saved
+/my_tf_pipline/my_pratice
+
+# data save in /home/hpczeji1/hpc-work/Codebase/Datasets/datahub

@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 from tensorflow import keras
+ 
 
 """ 3 way to build models in tensofrlow 2.X 
     
@@ -108,3 +109,5 @@ class Stacked_CNN_3L(keras.layers.Layer):
         # self.add_loss(tf.reduce_sum(inputs))  #TODO 修改loss即可完成Spatial Loss的定义
         return self.linear(x)
 
+
+"""Sequential way 2 to build vgg16"""
