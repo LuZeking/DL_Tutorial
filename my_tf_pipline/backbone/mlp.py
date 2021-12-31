@@ -43,5 +43,6 @@ def Sequential_Regression_MLP():
 
 def get_Sequential_Regression_MLP():
     net = keras.models.Sequential()
+    net.add(tf.keras.layers.Dense(10,activation="relu"))
     net.add(keras.layers.Dense(1))
     return net

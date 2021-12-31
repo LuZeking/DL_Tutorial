@@ -6,8 +6,63 @@ import tarfile
 import zipfile
 import requests
 import pandas as pd
+import numpy as np
 
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import load_img
+from tensorflow.keras.preprocessing.image import img_to_array
+from numpy import expand_dims
 
+def get_classification_dataset_from_dir(directory, image_size=(224, 224), batch_size=32, shuffle=True, validation_split_ratio=None):
+    """! from_dir inherit from tf.data.Dataset, can see more e.g. slices, txt,xx from
+         https://www.tensorflow.org/versions/r2.3/api_docs/python/tf/data/Dataset#methods """
+    seed=369
+
+    if validation_split_ratio:
+        train_ds = tf.keras.preprocessing.image_dataset_from_directory(  # tf.keras.utils.image_dataset_from_directory in 2.7.0
+        directory, labels='inferred', label_mode='int', class_names=None, 
+        color_mode='rgb', batch_size=batch_size, image_size=image_size, 
+        shuffle= shuffle, seed=seed, validation_split=validation_split_ratio, subset="training",
+        interpolation='bilinear', follow_links=False,  ) # crop_to_aspect_ratio=False, not this in 2.3
+        val_ds = tf.keras.preprocessing.image_dataset_from_directory(  # tf.keras.utils.image_dataset_from_directory in 2.7.0
+        directory, labels='inferred', label_mode='int', class_names=None, 
+        color_mode='rgb', batch_size=batch_size, image_size=image_size, 
+        shuffle= shuffle, seed=seed, validation_split=validation_split_ratio, subset="validation",
+        interpolation='bilinear', follow_links=False,  ) # crop_to_aspect_ratio=False, not this in 2.3
+
+        return train_ds,val_ds
+
+    else:
+        return  tf.keras.preprocessing.image_dataset_from_directory(  # tf.keras.utils.image_dataset_from_directory in 2.7.0
+        directory, labels='inferred', label_mode='int', class_names=None, 
+        color_mode='rgb', batch_size=batch_size, image_size=image_size, 
+        shuffle= shuffle, seed=seed, validation_split=None, subset= None,
+        interpolation='bilinear', follow_links=False,  ) # crop_to_aspect_ratio=False, not this in 2.3
+
+def get_classification_dataset_imgslist_from_dir(dir_name, test_ratio = 0.2):
+    """make dataset from dir
+
+        inputs: 
+            dir_name, abs path without last /
+        return:
+            train_data, train_label, test_data,test_label, class_id2name_dict     
+    """
+    class_name_list, class_id_list  = os.listdir(dir_name), list(range(len(os.listdir(dir_name))))
+    class_id2name_dict = {k:v for k,v in zip(class_id_list, class_name_list)}
+    train_data, train_labels, test_data, test_labels = [],[],[],[]
+    from glob import glob
+    for cat in class_name_list:
+        imgs_list = glob(dir_name+"/"+cat+"/")
+        for img in imgs_list:
+            judge_dice = np.random.randn()
+            if judge_dice <= test_ratio:
+                test_data.append(img)
+                test_labels.append(class_id2name_dict[cat])
+            else:
+                train_data.append(img)
+                train_labels.append(class_id2name_dict[cat])
+
+    return  train_data, train_labels, test_data, test_labels, class_id2name_dict 
 
 def get_kaggle_house_dataset():
     """save your dataset url in Data_HUB, refer to MU Li' Tutorial"""
@@ -70,3 +125,27 @@ def download_all():  #@save
         download(name)
 
 
+
+def generate_function_seq_dataset(T = 1000, tau =4, if_plot = False):
+    import tensorflow as tf
+
+    time = tf.range(1,T+1,dtype=tf.float32)
+    y = tf.sin(0.01 * time)+tf.random.normal([T],0,0.2)
+
+    if if_plot:
+        from d2l import tensorflow as d2l
+        d2l.plot(time, [y], 'time', 'y', xlim=[1, 1000], figsize=(6, 3))
+
+    # features = tf.Variable(np.empty((T-tau,tau))) # constant cannot be assigned
+    features = tf.Variable(tf.zeros((T - tau, tau)))
+    # labels = []
+    for i in range(tau):
+        # features[:,i] = y[i:T-tau+i]
+        features[:, i].assign(y[i: T - tau + i])
+
+        # labels.append(y[T-tau+i])
+    labels = tf.reshape(y[tau:],(-1,1)) # tau is time length, T-tau is number of sequences
+
+    return features,labels, y, time
+
+    

@@ -23,3 +23,25 @@ class RNNModel(tf.keras.layers.Layer):
 
     def begin_state(self, *args, **kwargs):
         return self.rnn.cell.get_initial_state(*args, **kwargs)
+
+def get_Sequential_Regression_LSTM(units = 64, output_size = 1):
+    
+    # lstm_layer = keras.layers.RNN(
+    #         keras.layers.LSTMCell(units)) # , input_shape=(None, input_dim)
+    
+    num_hiddens = 256
+    run_cell = tf.keras.layers.SimpleRNNCell(num_hiddens, kernel_initializer = "glorot_uniform") # DEFAULT
+    rnn_layer = tf.keras.layers.RNN(
+        run_cell,
+        time_major=True,  # If True, the inputs and outputs will be in shape `(timesteps, batch, ...)`, otherwise reverse
+        return_sequences=True,
+        return_state=True)
+    net = RNNModel(rnn_layer,vocab_size=output_size)
+    # net = keras.models.Sequential(
+    #     [
+    #         rnn_layer, #lstm_layer,
+    #         keras.layers.BatchNormalization(),
+    #         keras.layers.Dense(output_size),
+    #     ]
+    # )
+    return net
