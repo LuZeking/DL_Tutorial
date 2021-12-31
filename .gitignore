@@ -7,7 +7,7 @@
 /my_tf_pipline/data  
 /my_tf_pipline/results
 /my_tf_pipline/model_saved
-/my_tf_pipline/my_pratice
+# /my_tf_pipline/my_pratice
 
 /my_tf_pipline/my_pratice/logs
 # data save in /home/hpczeji1/hpc-work/Codebase/Datasets/datahub
