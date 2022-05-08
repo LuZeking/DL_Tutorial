@@ -7,9 +7,9 @@
 /my_tf_pipline/*.out 
 /my_tf_pipline/*.sh 
 /my_tf_pipline/slurm_train.py 
-/my_tf_pipline/utils/*.out 
-/my_tf_pipline/utils/*.sh 
-/my_tf_pipline/utils/slurm_train.py
+/my_tf_pipline/scripts/*.out 
+/my_tf_pipline/scripts/*.sh 
+/my_tf_pipline/scripts/slurm_train.py
 /Keras_tf_tutorials/eat_tensorflow2_in_30_days_ipynb/*
 
 /my_tf_pipline/results
