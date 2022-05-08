@@ -1,0 +1,131 @@
+Loading rhel8/default-amp
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 openmpi/4.1.1/gcc-9.4.0-epagguv
+Changed directory to /rds/user/hpczeji1/hpc-work/Codebase/AllAbout_DeepLearning/Tutorial/my_tf_pipline/my_pratice.
+
+JobID: 53067953
+======
+Time: Tue  1 Feb 08:37:59 GMT 2022
+Running on master node: gpu-q-10
+Current directory: /rds/user/hpczeji1/hpc-work/Codebase/AllAbout_DeepLearning/Tutorial/my_tf_pipline/my_pratice
+
+Nodes allocated:
+================
+gpu-q-10
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+python complexity_cal.py 
+
+2022-02-01 08:38:23.680663: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/python-3.6.2-me5fseeigjqt7izoku6haq3cevm6pjfi/lib:/usr/local/Cluster-Apps/cudnn/8.0_cuda-11.1/lib64:/usr/local/software/cuda/11.0/lib64:/usr/local/software/cuda/11.0/lib:/usr/local/software/cuda/11.0/nvvm/lib64:/usr/local/software/spack/spack-rhel8-20210927/opt/spack/linux-centos8-zen2/gcc-9.4.0/openmpi-4.1.1-epagguvqfrwuokz2ftiyzbxibae5afnn/lib:/usr/local/software/cuda/11.4/lib64:/usr/local/software/cuda/11.4/lib:/usr/local/software/cuda/11.4/nvvm/lib64:/usr/local/software/global-rhel8/lib:/usr/local/software/slurm/current-rhel8/lib
+2022-02-01 08:38:23.680723: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-02-01 08:40:10.666816: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2022-02-01 08:40:10.754323: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:c1:00.0 name: NVIDIA A100-SXM-80GB computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.35GiB deviceMemoryBandwidth: 1.85TiB/s
+2022-02-01 08:40:10.754602: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/python-3.6.2-me5fseeigjqt7izoku6haq3cevm6pjfi/lib:/usr/local/Cluster-Apps/cudnn/8.0_cuda-11.1/lib64:/usr/local/software/cuda/11.0/lib64:/usr/local/software/cuda/11.0/lib:/usr/local/software/cuda/11.0/nvvm/lib64:/usr/local/software/spack/spack-rhel8-20210927/opt/spack/linux-centos8-zen2/gcc-9.4.0/openmpi-4.1.1-epagguvqfrwuokz2ftiyzbxibae5afnn/lib:/usr/local/software/cuda/11.4/lib64:/usr/local/software/cuda/11.4/lib:/usr/local/software/cuda/11.4/nvvm/lib64:/usr/local/software/global-rhel8/lib:/usr/local/software/slurm/current-rhel8/lib
+2022-02-01 08:40:10.756513: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcublas.so.10'; dlerror: libcublas.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/python-3.6.2-me5fseeigjqt7izoku6haq3cevm6pjfi/lib:/usr/local/Cluster-Apps/cudnn/8.0_cuda-11.1/lib64:/usr/local/software/cuda/11.0/lib64:/usr/local/software/cuda/11.0/lib:/usr/local/software/cuda/11.0/nvvm/lib64:/usr/local/software/spack/spack-rhel8-20210927/opt/spack/linux-centos8-zen2/gcc-9.4.0/openmpi-4.1.1-epagguvqfrwuokz2ftiyzbxibae5afnn/lib:/usr/local/software/cuda/11.4/lib64:/usr/local/software/cuda/11.4/lib:/usr/local/software/cuda/11.4/nvvm/lib64:/usr/local/software/global-rhel8/lib:/usr/local/software/slurm/current-rhel8/lib
+2022-02-01 08:40:10.769145: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2022-02-01 08:40:10.780919: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2022-02-01 08:40:10.795112: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2022-02-01 08:40:10.796561: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcusparse.so.10'; dlerror: libcusparse.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/python-3.6.2-me5fseeigjqt7izoku6haq3cevm6pjfi/lib:/usr/local/Cluster-Apps/cudnn/8.0_cuda-11.1/lib64:/usr/local/software/cuda/11.0/lib64:/usr/local/software/cuda/11.0/lib:/usr/local/software/cuda/11.0/nvvm/lib64:/usr/local/software/spack/spack-rhel8-20210927/opt/spack/linux-centos8-zen2/gcc-9.4.0/openmpi-4.1.1-epagguvqfrwuokz2ftiyzbxibae5afnn/lib:/usr/local/software/cuda/11.4/lib64:/usr/local/software/cuda/11.4/lib:/usr/local/software/cuda/11.4/nvvm/lib64:/usr/local/software/global-rhel8/lib:/usr/local/software/slurm/current-rhel8/lib
+2022-02-01 08:40:10.797804: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/python-3.6.2-me5fseeigjqt7izoku6haq3cevm6pjfi/lib:/usr/local/Cluster-Apps/cudnn/8.0_cuda-11.1/lib64:/usr/local/software/cuda/11.0/lib64:/usr/local/software/cuda/11.0/lib:/usr/local/software/cuda/11.0/nvvm/lib64:/usr/local/software/spack/spack-rhel8-20210927/opt/spack/linux-centos8-zen2/gcc-9.4.0/openmpi-4.1.1-epagguvqfrwuokz2ftiyzbxibae5afnn/lib:/usr/local/software/cuda/11.4/lib64:/usr/local/software/cuda/11.4/lib:/usr/local/software/cuda/11.4/nvvm/lib64:/usr/local/software/global-rhel8/lib:/usr/local/software/slurm/current-rhel8/lib
+2022-02-01 08:40:10.797826: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-02-01 08:40:10.799144: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-02-01 08:40:10.933989: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2445650000 Hz
+2022-02-01 08:40:10.935971: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b6473afec0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-02-01 08:40:10.936009: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-02-01 08:40:10.957459: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-01 08:40:10.957487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      
+Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544 
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312  
+_________________________________________________________________
+predictions (Dense)          (None, 1000)              4097000   
+=================================================================
+Total params: 138,357,544
+Trainable params: 138,357,544
+Non-trainable params: 0
+_________________________________________________________________
+[<tensorflow.python.keras.engine.input_layer.InputLayer object at 0x14740576feb8>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473b81832e8>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473b7e7e7f0>, <tensorflow.python.keras.layers.pooling.MaxPooling2D object at 0x1473b7e7eba8>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473b7c377f0>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473b7c4f6a0>, <tensorflow.python.keras.layers.pooling.MaxPooling2D object at 0x1473b7c4f6d8>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473b7c572b0>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473b7c57eb8>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81b9550>, <tensorflow.python.keras.layers.pooling.MaxPooling2D object at 0x1473a81b94e0>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81c3908>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81ca780>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81ca7f0>, <tensorflow.python.keras.layers.pooling.MaxPooling2D object at 0x1473a81d4780>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81d4fd0>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81dadd8>, <tensorflow.python.keras.layers.convolutional.Conv2D object at 0x1473a81e4160>, <tensorflow.python.keras.layers.pooling.MaxPooling2D object at 0x1473a81e4ac8>, <tensorflow.python.keras.layers.core.Flatten object at 0x1473a81eb940>, <tensorflow.python.keras.layers.core.Dense object at 0x1473a81ebf28>, <tensorflow.python.keras.layers.core.Dense object at 0x1473a8173438>, <tensorflow.python.keras.layers.core.Dense object at 0x1473a8173978>]
+23
+Caculating faces ...
+Caculating animals ...
+Caculating places ...
+Caculating objects ...
+('faces', [0.6913739046547145, 71.57059785084545], 28.15, 28.32)
+('animals', [2.628828683977812, 89.2863842216684], 39.39, 38.33)
+('places', [1.581048851729774, 78.69067717126241], 39.89, 40.27)
+('objects', [0.0, 100.0], 46.05, 46.06)
+Caculating faces ...
+Caculating animals ...
+Caculating places ...
+Caculating objects ...
+('faces', [0.4652339795997822, 43.19084326092035], 16.28, 16.04)
+('animals', [1.8716421396869884, 80.0484699836487], 33.21, 32.12)
+('places', [0.0, 65.28459082768825], 30.84, 30.58)
+('objects', [0.17713929767188288, 100.0], 36.92, 36.12)
+Caculating faces ...
+Caculating animals ...
+Caculating places ...
+Caculating objects ...
+('faces', [1.8620764317419072, 60.878351557143375], 21.44, 20.84)
+('animals', [3.0986491525627606, 86.8126977253317], 40.1, 39.27)
+('places', [0.0, 81.49952485775805], 35.69, 35.14)
+('objects', [2.5032177354359875, 100.0], 48.32, 47.94)
+Caculating faces ...
+Caculating animals ...
+Caculating places ...
+Caculating objects ...
+('faces', [2.7386306846576716, 64.62768615692154], 28.56, 28.49)
+('animals', [0.0, 79.46026986506747], 46.15, 46.4)
+('places', [0.5197401299350329, 77.04147926036981], 36.76, 36.17)
+('objects', [3.3383308345827083, 100.0], 51.6, 51.1)

@@ -42,7 +42,7 @@ if mode == "train":
 
 elif mode == "test":
     model.load_state_dict(torch.load("./model_saved/simple_model_2021_12_06.pth")) 
-    print(model(test_dataset) #! didn't match because some of the arguments have invalid types: (MNIST, Parameter, Parameter, tuple, tuple, tuple, int)
+    print(model(test_dataset)) #! didn't match because some of the arguments have invalid types: (MNIST, Parameter, Parameter, tuple, tuple, tuple, int)
 
 else:
     raise NotImplementedError

@@ -1,0 +1,4 @@
+[submodule "/home/hpczeji1/hpc-work/Codebase/AllAbout_DeepLearning/Tutorial/Keras_tf_tutorials/eat_tensorflow2_in_30_days_ipynb"]
+	path = /home/hpczeji1/hpc-work/Codebase/AllAbout_DeepLearning/Tutorial/Keras_tf_tutorials/eat_tensorflow2_in_30_days_ipynb
+	url = https://github.com/Amberlan1001/eat_tensorflow2_in_30_days_ipynb.git
+	branch = english

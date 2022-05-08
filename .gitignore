@@ -4,7 +4,13 @@
 /my_pytorch_pipline/model_saved
 /my_pytorch_pipline/results_saved
 
-/my_tf_pipline/data  
+/my_tf_pipline/*.out 
+/my_tf_pipline/slurm*.sh 
+/my_tf_pipline/slurm*.py 
+/my_tf_pipline/utils/*.out 
+/my_tf_pipline/utils/slurm*.sh 
+/my_tf_pipline/utils/slurm*.py
+/Keras_tf_tutorials/eat_tensorflow2_in_30_days_ipynb/*
 /my_tf_pipline/results
 /my_tf_pipline/model_saved
 # /my_tf_pipline/my_pratice

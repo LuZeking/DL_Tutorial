@@ -1,4 +1,4 @@
-"""Here we download dataset"""
+"""Here we download dataset in raw format"""
 
 import hashlib
 import os
@@ -119,7 +119,7 @@ def download_extract(name, folder=None):  #@save
     fp.extractall(base_dir)
     return os.path.join(base_dir, folder) if folder else data_dir
 
-def download_all():  #@save
+def download_all( DATA_HUB):  #@save
     """Download all the files in the DATA_HUB"""
     for name in DATA_HUB:
         download(name)
@@ -127,6 +127,19 @@ def download_all():  #@save
 
 
 def generate_function_seq_dataset(T = 1000, tau =4, if_plot = False):
+    """return sin sequence dataset 
+
+    Args:
+        T (int, optional): [length of sequence]. Defaults to 1000.
+        tau (int, optional): [number of seq]. Defaults to 4.
+        if_plot (bool, optional): [plot]. Defaults to False.
+
+    Returns:
+        [feature]:  Train data- X input
+        labels: label of train data ？
+        y: ture entire curve
+        time: x-axis
+    """    
     import tensorflow as tf
 
     time = tf.range(1,T+1,dtype=tf.float32)
