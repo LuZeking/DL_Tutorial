@@ -6,7 +6,9 @@
 
 /my_tf_pipline/*.out 
 /my_tf_pipline/*.sh 
-/my_tf_pipline/slurm_train.py 
+/my_tf_pipline/machine.*.*  
+/my_tf_pipline/slurm_train.py
+/my_tf_pipline/scripts/machine.*.*  
 /my_tf_pipline/scripts/*.out 
 /my_tf_pipline/scripts/*.sh 
 /my_tf_pipline/scripts/slurm_train.py
